@@ -1,0 +1,87 @@
+import pandas as pd
+from spellchecker import SpellChecker
+from business_terms import normalization_map
+
+# -----------------------------
+# Load Excel
+# -----------------------------
+df = pd.read_excel(
+    r"C:/Users/Jen/Documents/meter_comments.xlsx",
+    sheet_name="Sheet1"
+)
+
+# -----------------------------
+# Clean text
+# -----------------------------
+df["column1_clean"] = (
+    df["column1"]
+    .astype(str)
+    .str.lower()
+    .str.replace(r"[^a-z0-9\s]", " ", regex=True)
+    .str.replace(r"\s+", " ", regex=True)
+    .str.strip()
+)
+
+# -----------------------------
+# Spellchecker
+# -----------------------------
+spell = SpellChecker()
+spell.word_frequency.load_words(normalization_map.keys())
+spell.word_frequency.load_words(normalization_map.values())
+
+# -----------------------------
+# Known vocabulary
+# -----------------------------
+known_words = (
+    set(normalization_map.keys())
+    | set(normalization_map.values())
+    | set(spell.word_frequency.dictionary.keys())
+)
+
+# -----------------------------
+# Split joined words
+# -----------------------------
+def split_joined_word(word, known_words):
+    if len(word) < 6:
+        return [word]
+
+    if word in known_words:
+        return [word]
+
+    for i in range(2, len(word) - 1):
+        left = word[:i]
+        right = word[i:]
+
+        if left in known_words and right in known_words:
+            return [left, right]
+
+    return [word]
+
+# -----------------------------
+# Correct + normalize
+# -----------------------------
+def correct_comment(text):
+    words = text.split()
+    corrected_words = []
+
+    for word in words:
+        split_words = split_joined_word(word, known_words)
+
+        for split_word in split_words:
+            normalized_word = normalization_map.get(split_word)
+
+            if normalized_word:
+                corrected_words.append(normalized_word)
+                continue
+
+            correction = spell.correction(split_word)
+            corrected_words.append(correction if correction else split_word)
+
+    return " ".join(corrected_words)
+
+# -----------------------------
+# Apply
+# -----------------------------
+df["column1_corrected"] = df["column1_clean"].apply(correct_comment)
+
+print(df[["column1", "column1_clean", "column1_corrected"]].head(20))
