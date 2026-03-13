@@ -1,208 +1,179 @@
-•	Weatherhead
-	•	Service mast
-	•	Service drop
-	•	Service lateral
-	•	Drip loop
-	•	Service entrance conductors
-	•	Service conduit
-	•	Service attachment
-	•	Triplex line
-	•	Neutral conductor
-	•	Ground conductor
-	•	Ground rod
-	•	Ground clamp
-	•	Bonding jumper
-	•	Grounding electrode
-agbay
-ag bay
-ag-bay
-ag bays
-ag-bay panel
-ag meter bay
-ag meterbay
-ag meter bay
-ag panel
-ag service bay
-agb
-agbays
-agp
-ag pnl
-ag svc bay
-ag svc
-ag meter
-ag mtr bay
-ag mtr
-ag meter bay
-ag mtr bay
-ag meter panel
-ag meter bank
-ag meter base
-ag meter enclosure
-ag meter cabinet
-ag meter socket
-ag meter location
-ag service
-ag svc
-ag pump service
-ag irrigation service
-ag pump meter
-ag irrigation meter
-ag well meter
-ag well service
-ag meter bank
-ag bank
-ag meter rack
-ag panel
-ag cabinet
-ag meter cabinet
-ag multi meter panel
+normalization_map = {
 
-service
-euc
-mtr      meter
-mt       meter
-mtrbase  meter base
-mb       meter base
-ms       meter socket
-mskt     meter socket
-jaw      meter jaws
-ring     meter ring
-rb       ring bypass
-lb       lever bypass
-hb       horn bypass
-v        voltage
-i        current
-vi       voltage/current
-kw       kilowatt
-kwh      kilowatt hour
-kva      kilovolt ampere
-kvar     reactive power
-pf       power factor
-hz       frequency
-ph       phase
-tdis     transmission & distribution system/infrastructure
-t&d      transmission and distribution
-feeder   distribution feeder
-xfmr     transformer
-tx       transformer
-ptr      potential transformer
-ct       current transformer
-cap      capacitor bank
-reg      voltage regulator
-recl     recloser
-swgr     switchgear
-sub      substation
+# Service entrance / physical infrastructure
+"weatherhead": "weatherhead",
+"wh": "weatherhead",
+"service_mast": "service_mast",
+"sm": "service_mast",
+"service_drop": "service_drop",
+"sd": "service_drop",
+"service_lateral": "service_lateral",
+"sl": "service_lateral",
+"service_entrance": "service_entrance",
+"se": "service_entrance",
+"service_conduit": "service_conduit",
+"service_attachment": "service_attachment",
+"drip_loop": "drip_loop",
+"triplex": "triplex_line",
+"triplex_line": "triplex_line",
 
-serv     service
-svc      service
-srvc     service
-sd       service drop
-sl       service lateral
-sm       service mast
-wh       weatherhead
-se       service entrance
-sec      secondary
-pri      primary
+# Grounding
+"neutral": "neutral_conductor",
+"neutral_conductor": "neutral_conductor",
+"ground": "ground_conductor",
+"ground_conductor": "ground_conductor",
+"ground_rod": "ground_rod",
+"ground_clamp": "ground_clamp",
+"grounding_electrode": "grounding_electrode",
+"bonding_jumper": "bonding_jumper",
 
-ami      advanced metering infrastructure
-rf       radio frequency
-rssi     received signal strength
-mesh     mesh network
-ep       endpoint
-nid      network interface device
-nic      network interface card
-gw       gateway
-dc       data collector
-dcu      data concentrator unit
-router   router meter
+# Agricultural service / meter bank
+"ag": "agricultural_service",
+"ag_service": "agricultural_service",
+"agservice": "agricultural_service",
+"ag_svc": "agricultural_service",
+"agbay": "agricultural_meter_bay",
+"ag_bay": "agricultural_meter_bay",
+"ag_meter_bay": "agricultural_meter_bay",
+"ag_meter_panel": "agricultural_meter_panel",
+"ag_meter_bank": "agricultural_meter_bank",
+"ag_panel": "agricultural_meter_panel",
+"ag_bank": "agricultural_meter_bank",
+"ag_pump": "agricultural_pump",
+"ag_pump_service": "agricultural_pump_service",
+"ag_well": "agricultural_well_service",
 
-pwr      power
-pfail    power fail
-pwrfail  power failure
-pwrrest  power restore
-tamper   tamper event
-revrot   reverse rotation
-phaseL   phase loss
-ov       overvoltage
-uv       undervoltage
-selfchk  self check
-fw       firmware
-mem      memory
-ram      RAM failure
-nvm      nonvolatile memory
+# Meter hardware
+"mtr": "meter",
+"mt": "meter",
+"meter": "meter",
+"mtrbase": "meter_base",
+"mb": "meter_base",
+"meter_base": "meter_base",
+"ms": "meter_socket",
+"mskt": "meter_socket",
+"meter_socket": "meter_socket",
+"jaw": "meter_jaws",
+"ring": "meter_ring",
+"rb": "ring_bypass",
+"lb": "lever_bypass",
+"hb": "horn_bypass",
+"bay": "meter_bay",
+"bank": "meter_bank",
+"multi": "multi_meter",
 
-euc      end user customer
-cust     customer
-load     customer load
-ls       load side
-us       utility side
-cs       customer side
+# Measurement / metrology
+"v": "voltage",
+"vltg": "voltage",
+"voltage": "voltage",
+"i": "current",
+"cur": "current",
+"current": "current",
+"vi": "voltage_current",
+"kw": "kilowatt",
+"kwh": "kilowatt_hour",
+"kva": "kilovolt_ampere",
+"kvar": "reactive_power",
+"pf": "power_factor",
+"hz": "frequency",
+"ph": "phase",
+"imb": "phase_imbalance",
+"drop": "voltage_drop",
+"spk": "voltage_spike",
+"sag": "voltage_sag",
+"swl": "voltage_swell",
 
-inst     install
-instl    installed
-repl     replace
-rpl      replace
-rmv      remove
-reseat   reseat
-prog     program
-comm     commission
-disc     disconnect
-recon    reconnect
+# Power system / grid
+"tdis": "transmission_distribution_system",
+"t&d": "transmission_distribution",
+"feeder": "distribution_feeder",
+"xfmr": "transformer",
+"tx": "transformer",
+"ptr": "potential_transformer",
+"ct": "current_transformer",
+"cap": "capacitor_bank",
+"reg": "voltage_regulator",
+"recl": "recloser",
+"swgr": "switchgear",
+"sub": "substation",
+"sec": "secondary",
+"pri": "primary",
 
-ag       agricultural
-res      residential
-comm     commercial
-ind      industrial
-multi    multi-meter
-bank     meter bank
-bay      meter bay
-agbay    agricultural meter bay
+# AMI / communications
+"ami": "advanced_metering_infrastructure",
+"rf": "radio_frequency",
+"rssi": "signal_strength",
+"mesh": "mesh_network",
+"ep": "endpoint",
+"nid": "network_interface_device",
+"nic": "network_interface_card",
+"gw": "gateway",
+"dc": "data_collector",
+"dcu": "data_concentrator_unit",
+"router": "router_meter",
+"comms": "communications",
+"comm": "communications",
+"join": "network_join",
+"ping": "ping_test",
+"loss": "packet_loss",
+"lat": "network_latency",
+"snr": "signal_to_noise_ratio",
 
-comms    communications
-comm     communications
-join     network join
-reg      register to network
-ping     ping test
-loss     packet loss
-lat      latency
-snr      signal-to-noise ratio
-rssi     signal strength
+# Power events
+"pwr": "power",
+"pfail": "power_fail",
+"pwrfail": "power_failure",
+"pwrrest": "power_restore",
+"tamper": "tamper_event",
+"revrot": "reverse_rotation",
+"phasel": "phase_loss",
+"ov": "overvoltage",
+"uv": "undervoltage",
+"selfchk": "self_check",
+"fw": "firmware",
+"mem": "memory",
+"ram": "ram_failure",
+"nvm": "nonvolatile_memory",
 
-vltg     voltage
-cur      current
-imb      imbalance
-drop     voltage drop
-spk      spike
-sag      sag
-swl      swell
+# Customer / ownership
+"euc": "end_user_customer",
+"cust": "customer",
+"load": "customer_load",
+"ls": "load_side",
+"us": "utility_side",
+"cs": "customer_side",
 
-corr     corrosion
-moist    moisture
-h2o      water
-rod      rodent
-ins      insect
-dmg      damage
-brn      burn/burnt
+# Field actions
+"inst": "install",
+"instl": "install",
+"repl": "replace",
+"rpl": "replace",
+"rmv": "remove",
+"reseat": "reseat",
+"prog": "program",
+"disc": "disconnect",
+"recon": "reconnect",
 
-ok       ok
-chk      check
-fnd      find/found
-w/       with
-w/o      without
-poss     possible
-prob     problem
-iss      issue
-temp     temporary
-perm     permanent
+# Service type
+"res": "residential_service",
+"comm_service": "commercial_service",
+"ind": "industrial_service",
 
-agbay
-serv
-euc
-tdis
-vi
-weatherhead
+# Environmental / physical
+"corr": "corrosion",
+"moist": "moisture",
+"h2o": "water",
+"rod": "rodent_damage",
+"ins": "insect_damage",
+"dmg": "damage",
+"brn": "burn_damage",
 
-
-
-
-
+# Technician shorthand
+"chk": "check",
+"fnd": "find",
+"poss": "possible",
+"prob": "problem",
+"iss": "issue",
+"temp": "temporary",
+"perm": "permanent"
+}
