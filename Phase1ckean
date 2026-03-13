@@ -1,0 +1,84 @@
+import pandas as pd
+from spellchecker import SpellChecker
+
+# -----------------------------------
+# Load Excel file
+# -----------------------------------
+
+df = pd.read_excel(
+    r"C:/Users/Jen/Documents/meter_comments.xlsx",
+    sheet_name="Sheet1"
+)
+
+# -----------------------------------
+# Clean text
+# -----------------------------------
+
+df["column1_clean"] = (
+    df["column1"]
+    .astype(str)
+    .str.lower()
+    .str.replace(r"[^a-z0-9\s]", " ", regex=True)
+    .str.replace(r"\s+", " ", regex=True)
+    .str.strip()
+)
+
+# -----------------------------------
+# Initialize spell checker
+# -----------------------------------
+
+spell = SpellChecker()
+
+# Words we do NOT want corrected
+business_words = [
+    "meter",
+    "xfmr",
+    "rdng",
+    "vltg",
+    "comms",
+    "firmware",
+    "endpoint",
+    "router",
+    "rf",
+    "selfcheck"
+]
+
+spell.word_frequency.load_words(business_words)
+
+# -----------------------------------
+# Spelling correction function
+# -----------------------------------
+
+def correct_comment(text):
+
+    words = text.split()
+    corrected_words = []
+
+    for word in words:
+
+        # preserve domain words
+        if word in business_words:
+            corrected_words.append(word)
+            continue
+
+        # get correction suggestion
+        correction = spell.correction(word)
+
+        if correction:
+            corrected_words.append(correction)
+        else:
+            corrected_words.append(word)
+
+    return " ".join(corrected_words)
+
+# -----------------------------------
+# Apply correction
+# -----------------------------------
+
+df["column1_corrected"] = df["column1_clean"].apply(correct_comment)
+
+# -----------------------------------
+# Show results
+# -----------------------------------
+
+print(df[["column1", "column1_clean", "column1_corrected"]].head(20))
