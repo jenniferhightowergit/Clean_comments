@@ -1,0 +1,208 @@
+•	Weatherhead
+	•	Service mast
+	•	Service drop
+	•	Service lateral
+	•	Drip loop
+	•	Service entrance conductors
+	•	Service conduit
+	•	Service attachment
+	•	Triplex line
+	•	Neutral conductor
+	•	Ground conductor
+	•	Ground rod
+	•	Ground clamp
+	•	Bonding jumper
+	•	Grounding electrode
+agbay
+ag bay
+ag-bay
+ag bays
+ag-bay panel
+ag meter bay
+ag meterbay
+ag meter bay
+ag panel
+ag service bay
+agb
+agbays
+agp
+ag pnl
+ag svc bay
+ag svc
+ag meter
+ag mtr bay
+ag mtr
+ag meter bay
+ag mtr bay
+ag meter panel
+ag meter bank
+ag meter base
+ag meter enclosure
+ag meter cabinet
+ag meter socket
+ag meter location
+ag service
+ag svc
+ag pump service
+ag irrigation service
+ag pump meter
+ag irrigation meter
+ag well meter
+ag well service
+ag meter bank
+ag bank
+ag meter rack
+ag panel
+ag cabinet
+ag meter cabinet
+ag multi meter panel
+
+service
+euc
+mtr      meter
+mt       meter
+mtrbase  meter base
+mb       meter base
+ms       meter socket
+mskt     meter socket
+jaw      meter jaws
+ring     meter ring
+rb       ring bypass
+lb       lever bypass
+hb       horn bypass
+v        voltage
+i        current
+vi       voltage/current
+kw       kilowatt
+kwh      kilowatt hour
+kva      kilovolt ampere
+kvar     reactive power
+pf       power factor
+hz       frequency
+ph       phase
+tdis     transmission & distribution system/infrastructure
+t&d      transmission and distribution
+feeder   distribution feeder
+xfmr     transformer
+tx       transformer
+ptr      potential transformer
+ct       current transformer
+cap      capacitor bank
+reg      voltage regulator
+recl     recloser
+swgr     switchgear
+sub      substation
+
+serv     service
+svc      service
+srvc     service
+sd       service drop
+sl       service lateral
+sm       service mast
+wh       weatherhead
+se       service entrance
+sec      secondary
+pri      primary
+
+ami      advanced metering infrastructure
+rf       radio frequency
+rssi     received signal strength
+mesh     mesh network
+ep       endpoint
+nid      network interface device
+nic      network interface card
+gw       gateway
+dc       data collector
+dcu      data concentrator unit
+router   router meter
+
+pwr      power
+pfail    power fail
+pwrfail  power failure
+pwrrest  power restore
+tamper   tamper event
+revrot   reverse rotation
+phaseL   phase loss
+ov       overvoltage
+uv       undervoltage
+selfchk  self check
+fw       firmware
+mem      memory
+ram      RAM failure
+nvm      nonvolatile memory
+
+euc      end user customer
+cust     customer
+load     customer load
+ls       load side
+us       utility side
+cs       customer side
+
+inst     install
+instl    installed
+repl     replace
+rpl      replace
+rmv      remove
+reseat   reseat
+prog     program
+comm     commission
+disc     disconnect
+recon    reconnect
+
+ag       agricultural
+res      residential
+comm     commercial
+ind      industrial
+multi    multi-meter
+bank     meter bank
+bay      meter bay
+agbay    agricultural meter bay
+
+comms    communications
+comm     communications
+join     network join
+reg      register to network
+ping     ping test
+loss     packet loss
+lat      latency
+snr      signal-to-noise ratio
+rssi     signal strength
+
+vltg     voltage
+cur      current
+imb      imbalance
+drop     voltage drop
+spk      spike
+sag      sag
+swl      swell
+
+corr     corrosion
+moist    moisture
+h2o      water
+rod      rodent
+ins      insect
+dmg      damage
+brn      burn/burnt
+
+ok       ok
+chk      check
+fnd      find/found
+w/       with
+w/o      without
+poss     possible
+prob     problem
+iss      issue
+temp     temporary
+perm     permanent
+
+agbay
+serv
+euc
+tdis
+vi
+weatherhead
+
+
+
+
+
